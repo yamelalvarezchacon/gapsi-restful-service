@@ -1,0 +1,86 @@
+{
+	"info": {
+		"_postman_id": "705c30ac-8eab-47de-bfa9-b02e1579f243",
+		"name": "Gapsi-Restful-API-Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Buscar un artículo por el identificador",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/v1/:id",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						":id"
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "article_01"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear un nuevo artículo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idArticulo\": \"article_01\",\r\n    \"nombre\": \"Mesa\",\r\n    \"descripcion\": \"Mesa de escritorio\",                  \r\n    \"precio\": 1.235,\r\n    \"modelo\": \"AX133S0001\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar un artículo dado el identificador",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"descripcion\": \"Mesa de computadora\",\r\n    \"modelo\": \"AX133S0002\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1/article_01",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"article_01"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
